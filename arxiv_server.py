@@ -1,4 +1,6 @@
 import os
+import logging
+
 from typing import Dict, List
 
 from fastmcp import FastMCP
@@ -11,7 +13,7 @@ if not TAVILY_API_KEY:
 
 tavily = TavilyClient(api_key=TAVILY_API_KEY)
 mcp = FastMCP(name="ArxivExplorer")
-print("ArxivExplorer server initialized.")
+logging.info("ArxivExplorer server initialized.")
 
 
 # --- Dynamic Resource: Suggested AI research topics ---
@@ -52,7 +54,7 @@ def summarize_paper(paper_url: str) -> str:
     return tavily.qna_search(query=prompt)
 
 
-print("Tools 'Search Arxiv' and 'Summarize Paper' registered.")
+logging.info("Tools 'Search Arxiv' and 'Summarize Paper' registered.")
 
 
 # --- Prompt Template: Explore a topic thoroughly ---
@@ -66,8 +68,8 @@ def explore_topic_prompt(topic: str) -> str:
     )
 
 
-print("Prompt 'explore_topic_prompt' registered.")
+logging.info("Prompt 'explore_topic_prompt' registered.")
 
 if __name__ == "__main__":
-    print("Starting ArxivExplorer Server...")
+    logging.info("Starting ArxivExplorer Server...")
     mcp.run(transport="http")
