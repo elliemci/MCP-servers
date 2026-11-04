@@ -1,0 +1,14 @@
+{
+	"model": "Qwen/Qwen2.5-72B-Instruct",
+	"provider": "nebius",
+	"servers": [
+    {
+      "type": "sse",
+      "url": "https://elliemci-mcp-sentiment.hf.space/gradio_api/mcp/sse",
+      "config": {
+        "command": "npx",
+        "args": ["mcp-remote"]
+      }
+    }
+	]
+}
