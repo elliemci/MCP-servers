@@ -51,8 +51,6 @@ python util_server.py      # terminal 1
 python client.py           # terminal 2
 ```
 
-TODO (Ellie): which course or tutorial did you follow for this?
-
 ## 04 · ArXiv explorer
 
 A server named `ArxivExplorer` with one resource (`resource://ai/arxiv_topics`, a fixed list of four topics), two tools (`search_arxiv` finds ArXiv papers through Tavily search, `summarize_paper` asks Tavily's Q&A search for a summary) and one prompt (`explore_topic_prompt`) that tells an LLM to search, summarize each paper and combine the results. The client pings the server, lists tools, resources and prompts, reads the resource, then tries each tool and the prompt.
